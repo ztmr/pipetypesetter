@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-2"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <!-- This is not supported at the moment :-(
+  <axf:document-info name="title" value="The Title" />
+  <axf:document-info name="subject" value="The SubTitle" />
+  <axf:document-info name="author" value="The Author" />
+  -->
+  <fo:layout-master-set>
+    <fo:simple-page-master page-height="297mm" page-width="210mm"
+           margin="5mm 25mm 5mm 25mm" master-name="PageMaster">
+      <fo:region-body margin="20mm 0mm 20mm 0mm" />
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+  <fo:page-sequence master-reference="PageMaster">
+    <fo:flow flow-name="xsl-region-body">
+      <fo:block>
+        <fo:block>Hello World!</fo:block>
+        <fo:block>This is the first +ěščřžýáíé+ĚŠČŘŽÝÁÍÉ
+           <fo:inline font-weight="bold">SimpleDoc</fo:inline>
+         </fo:block>
+         <fo:block space-after="10pt">
+           <fo:external-graphic src="url('logo.gif')" width="340px" height="238px" />
+         </fo:block>
+      </fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+</fo:root>
